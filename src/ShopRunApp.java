@@ -12,7 +12,7 @@ public class ShopRunApp {
 
     public static void main(String[] args) {
         ShopService s = new ShopService();
-        Product kivi = new Kivi();
+        /*Kivi kivi = new Kivi();
         BasketOnSet myBasket = new BasketOnSet();
         myBasket.addProduct(kivi);
 
@@ -34,9 +34,9 @@ public class ShopRunApp {
         Random r = new Random();
         int i = r.nextInt(100);
         if ( i % 2 == 0) {
-            return new Apple();
+            return new Apple("Зеленое яблоко");
         }
-        return new Kivi();
+        return new Kivi(); */
     }
 
 

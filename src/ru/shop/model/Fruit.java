@@ -1,9 +1,18 @@
 package ru.shop.model;
 
-public interface Fruit extends Product {
+public abstract class Fruit  extends Product {
 
+    public Fruit(String name) {
+        super(name);
+    }
 
-    void eat();
-    void makeJuice();
+    @Override
+    void eat() {
 
+    }
+
+    @Override
+    void makeJuice() {
+
+    }
 }

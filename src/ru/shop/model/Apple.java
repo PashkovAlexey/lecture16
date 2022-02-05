@@ -1,8 +1,11 @@
 package ru.shop.model;
 
-public class Apple implements Fruit {
+public class Apple extends Fruit {
 
-private String kg;
+public Apple(String name){
+    super(name);
+}
+
 
 
     @Override
@@ -15,10 +18,5 @@ private String kg;
 
     }
 
-    @Override
-    public String toString() {
-        return "Apple{" +
-                "kg='" + kg + '\'' +
-                '}';
-    }
+
 }
