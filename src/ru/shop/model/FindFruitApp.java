@@ -1,34 +1,45 @@
 package ru.shop.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class FindFruitApp {
 
+    public static int SIZE = 10000000;
+
     public static void main(String[] args) {
-        List<Fruit> collection = populateCollection();
-        for (int i = 0 ; i < 70; i++){
-            Fruit fruit = collection.get(i);
-            if (collection.get(i).getName().equals("Золотое яблоко")){
-                System.out.println("Found index: " + i + " Found apple: " + fruit.toString());
-            }
-        }
+
+        Collection<Fruit> collection = populateCollection();
+        System.out.println(collection.contains(new Apple("Яблоко 500")));
+        /*printCollection(collection);*/
 
     }
 
-    private static List<Fruit> populateCollection() {
+    private static void printCollection(List<Fruit> collection) {
+        for (int i = 0 ; i < SIZE; i++){
+            if (collection.get(i).getName().equals("Золотое Яблоко!")){
+                System.out.println("Found index: " + i + " Found apple: " + collection.get(i).toString());
+                break;
 
-        List<Fruit> list = new ArrayList<>();
-        for (int i = 0 ; i < 70; i++){
-            if (i!=50){
-                list.add(new Apple("Яблоко"));
             } else {
-                list.add(new Apple("Золотое яблоко"));
+                System.out.println("Found index: " + i );
             }
         }
-        return list;
+    }
+
+    private static Collection<Fruit> populateCollection() {
+
+        Set<Fruit> set = new HashSet<>();
+        for (int i = 0 ; i < SIZE; i++){
+
+            set.add(new Apple("Яблоко " + String.valueOf(i)));
+
+            /*if (i!= 623){
+                set.add(new Apple("Яблоко!"));
+            } else {
+                set.add(new Apple("Золотое Яблоко!"));
+            }*/
+        }
+        return set;
     }
 
 }

@@ -22,14 +22,18 @@ public abstract class Product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Product)) return false;
+
         Product product = (Product) o;
-        return Objects.equals(name, product.name);
+
+        return name != null ? name.equals(product.name) : product.name == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return name != null ? name.hashCode() : 0;
     }
+
+
 
     public String getName() {
         return name;
