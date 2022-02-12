@@ -4,31 +4,27 @@ import java.util.*;
 
 public class FindFruitApp {
 
-    public static int SIZE = 10000000;
+    public static int SIZE = 1000;
 
     public static void main(String[] args) {
 
         Collection<Fruit> collection = populateCollection();
-        System.out.println(collection.contains(new Apple("Яблоко 500")));
-        /*printCollection(collection);*/
+        System.out.println(new Apple("Яблоко 1200").hashCode());
+
+        printCollection(collection);
+        System.out.println(collection.contains(new Apple("Яблоко 1200")));
 
     }
 
-    private static void printCollection(List<Fruit> collection) {
-        for (int i = 0 ; i < SIZE; i++){
-            if (collection.get(i).getName().equals("Золотое Яблоко!")){
-                System.out.println("Found index: " + i + " Found apple: " + collection.get(i).toString());
-                break;
-
-            } else {
-                System.out.println("Found index: " + i );
-            }
+    private static void printCollection(Collection<Fruit> collection) {
+        for (Fruit f : collection){
+        System.out.println(f.getName() + " " + f.hashCode());
         }
     }
 
-    private static Collection<Fruit> populateCollection() {
+    private static Set<Fruit> populateCollection() {
 
-        Set<Fruit> set = new HashSet<>();
+        HashSet<Fruit> set = new HashSet<>();
         for (int i = 0 ; i < SIZE; i++){
 
             set.add(new Apple("Яблоко " + String.valueOf(i)));

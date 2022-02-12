@@ -1,6 +1,7 @@
 package ru.shop.model;
 
-public class Apple extends Fruit {
+
+public class Apple extends Fruit implements Comparable {
 
 public Apple(String name){
     super(name);
@@ -19,4 +20,8 @@ public Apple(String name){
     }
 
 
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

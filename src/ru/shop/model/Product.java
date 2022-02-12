@@ -1,7 +1,5 @@
 package ru.shop.model;
 
-import java.util.Objects;
-
 public abstract class Product {
 
     private String name;

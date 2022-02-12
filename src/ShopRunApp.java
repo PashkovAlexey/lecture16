@@ -11,6 +11,12 @@ import java.util.Random;
 public class ShopRunApp {
 
     public static void main(String[] args) {
+
+        Apple a1 = new Apple("Желтое яблоко");
+        Apple a2 = new Apple("Красное яблоко");
+        a1.equals(a2);
+
+
         ShopService s = new ShopService();
         /*Kivi kivi = new Kivi();
         BasketOnSet myBasket = new BasketOnSet();
